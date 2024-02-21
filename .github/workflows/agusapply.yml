@@ -1,0 +1,20 @@
+name: terraform-apply
+
+on: [push]
+
+
+env:
+                    AWS_ACCESS_KEY_ID: ${{ secrets.AWS_AGUSTIN_KEY }}
+                    AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_AGUSTIN_SECRET }} 
+
+
+jobs:
+
+        ejecucion-apply:
+            runs-on: ubuntu-latest
+
+            steps:
+            - uses: actions/checkout@v4            
+            - run: terraform apply
+            - run: 
+                 echo Se ha ejecutado un terraform apply
