@@ -1,0 +1,15 @@
+name: terraform-plan
+
+on: [pull_request]
+
+jobs:
+
+        ejecucion-plan:
+            runs-on: ubuntu-latest
+
+            steps:
+            - uses: actions/checkout@v4            
+            - run: terraform init
+            - run: terraform plan
+            - run: 
+                 echo Se ha ejecutado un terraform plan
