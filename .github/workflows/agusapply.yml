@@ -16,6 +16,6 @@ jobs:
             steps:
             - uses: actions/checkout@v4  
             - run: terraform init          
-            - run: terraform apply
+            - run: terraform apply -auto-approve
             - run: 
                  echo Se ha ejecutado un terraform apply
